@@ -34,6 +34,24 @@ theorem eitherIsCommutative : Either A B → Either B A := by
   apply Either.inl
   assumption
 
+-- An alternate proof with pattern matching, using Lean 4's built in `Sum` type
+-- instead.
+--
+-- The bullet notation `. <tactics>` is just a way of structuring the proof,
+-- i.e. starting work on a specific subgoal and increasing the indentation
+-- level. It is not an operator, and removing the bullets and the indentation
+-- will result in an identical proof. See TPIL, specifically, the 'Tactics'
+-- section.
+theorem sumIsCommutative : Sum A B → Sum B A := by
+  intro h
+  cases h
+  . apply Sum.inr
+    assumption
+  . apply Sum.inl
+    assumption
+
+
+
 theorem eitherIsAssociative : Either (Either α β) γ → Either α (Either β γ) := by
   intro h
   cases h
