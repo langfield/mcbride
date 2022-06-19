@@ -70,4 +70,9 @@ theorem eitherIsAssociative : Either (Either α β) γ → Either α (Either β 
 #check eitherIsAssociative
 
 
+theorem vBad : Zero → α := by
+  intro z
+  cases z
+
+
 def hello := "world"
