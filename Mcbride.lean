@@ -42,14 +42,13 @@ theorem eitherIsCommutative : Either A B → Either B A := by
 -- level. It is not an operator, and removing the bullets and the indentation
 -- will result in an identical proof. See TPIL, specifically, the 'Tactics'
 -- section.
-theorem sumIsCommutative : Sum A B → Sum B A := by
+theorem sumIsCommutative {α β : Type u} : Sum α β → Sum β α := by
   intro h
   cases h
   . apply Sum.inr
     assumption
   . apply Sum.inl
     assumption
-
 
 
 theorem eitherIsAssociative : Either (Either α β) γ → Either α (Either β γ) := by
