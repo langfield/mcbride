@@ -1,6 +1,8 @@
 -- An exploration of examples from Conor McBride's CS410: Advanced Functional
 -- Programming. Originally written in Agda, translated to Lean 4.
 
+universe u
+
 inductive Zero : Type u where
 #check Zero
 
