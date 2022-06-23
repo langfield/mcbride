@@ -8,3 +8,9 @@ def mapPair {α α' β β' : Type u} (f : α → α') (g : β → β') : Product
 def mapEither {α α' β β' : Type u} (f : α → α') (g : β → β') : Either α β → Either α' β'
 | Either.inl a => Either.inl <| f a
 | Either.inr b => Either.inr <| g b
+
+-- 'K' for 'KONSTANT' (in German).
+def combinatorK {α ε : Type u} : α → ε → α := λ a e => a
+
+def combinatorS {α b γ : Type u} : (α → β → γ) → (γ → α) → γ → β :=
+  λ a b c => sorry
